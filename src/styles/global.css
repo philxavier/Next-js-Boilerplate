@@ -1,5 +1,7 @@
 @tailwind base;
 
+
+
 a {
   @apply text-blue-700;
 }
