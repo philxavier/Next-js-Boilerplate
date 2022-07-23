@@ -1,2 +1,13 @@
 
 
+.grid {
+    width: 100%;
+    // width: 1800px;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    background-color: black;
+    display: flex;
+    // flex-wrap:wrap;
+    min-width: 0;
+}
