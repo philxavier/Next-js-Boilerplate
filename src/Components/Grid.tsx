@@ -2,15 +2,21 @@ import React from 'react';
 import { Card } from './Card';
 import css from './grid.module.scss';
 
-import {citiesData} from '../cities-data'
+import { citiesData } from '../cities-data';
 
 export function Grid() {
-  // const [cityData, setCityData] = React.useState(cities);
-  const citiesNames = Object.keys(citiesData)
+  const citiesNames = Object.keys(citiesData);
+
+  const [citiesInfo, setCitiesInfo] = React.useState<any>(null);
+
+  React.useEffect(() => {
+   setCitiesInfo(citiesData)
+  },[])
+
   return (
     <div className={`mt-32 ${css.grid}`}>
-      {citiesNames.map((cityName, idx) => {
-        return <Card cityName={cityName} cityData={citiesData[cityName]} />;
+      {citiesInfo && citiesNames.map((cityName) => {
+        return <Card cityName={cityName} cityData={citiesInfo[cityName]} />;
       })}
     </div>
   );
